@@ -14,10 +14,5 @@ for American Truck Simulator and Euro Truck Simulator 2 — without manually edi
 - Creates backups in `live_streams_backup` next to the `.sii`
 
 ## Backups
-Every write creates a timestamped backup:
+Every write or radio slot change creates a timestamped backup:
 `...\live_streams_backup\live_streams.sii.bak_YYYYMMDD_HHMMSS`
-
-## Run from source
-```bash
-pip install PySide6
-python radio_editor.py
