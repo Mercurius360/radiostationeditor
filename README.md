@@ -23,4 +23,4 @@ Every write or radio slot change creates a timestamped backup:
 `...\live_streams_backup\live_streams.sii.bak_YYYYMMDD_HHMMSS`
 
 Tutorial Video:
-<video src="https://screenpal.com/content/video/cOVQ16nrtbp.mp4" controls width="640"></video>
+https://screenpal.com/content/video/cOVQ16nrtbp
