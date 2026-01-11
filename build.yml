@@ -1,0 +1,81 @@
+name: Build Desktop Apps
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyside6 pyinstaller
+
+      - name: Build Windows EXE
+        run: |
+          py -m PyInstaller --noconfirm --clean --windowed ^
+            --name "Radio Station Editor" ^
+            --icon "icon.ico" ^
+            --add-data "ATS_active.png;." ^
+            --add-data "ATS_inactive.png;." ^
+            --add-data "ETS2_active.png;." ^
+            --add-data "ETS2_inactive.png;." ^
+            radio_editor.py
+
+      - name: Zip build output
+        run: |
+          powershell -Command "Compress-Archive -Path 'dist/Radio Station Editor/*' -DestinationPath 'RadioStationEditor-Windows.zip' -Force"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RadioStationEditor-Windows
+          path: RadioStationEditor-Windows.zip
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyside6 pyinstaller
+
+      - name: Build macOS .app
+        run: |
+          pyinstaller --noconfirm --clean --windowed \
+            --name "Radio Station Editor" \
+            --add-data "ATS_active.png:." \
+            --add-data "ATS_inactive.png:." \
+            --add-data "ETS2_active.png:." \
+            --add-data "ETS2_inactive.png:." \
+            radio_editor.py
+
+      - name: Zip .app
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent "dist/Radio Station Editor.app" "RadioStationEditor-macOS.zip"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RadioStationEditor-macOS
+          path: RadioStationEditor-macOS.zip
