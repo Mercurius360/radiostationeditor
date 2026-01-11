@@ -8,12 +8,12 @@ A simple Windows tool to import, edit, sort, reorder (drag & drop), and delete r
 for American Truck Simulator and Euro Truck Simulator 2 — without manually editing the `.sii` file.
 
 ## Features
-- Detect ATS / ETS2 `live_streams.sii`
+- Detect ATS / ETS2 `live_streams.sii` or import custom-linked ones and let the app know which game it's associated to
 - Search + sort
-- Drag & drop reorder (Custom mode)
+- Drag & drop reordering single or multiple slots
 - Add / edit / duplicate
 - Delete one or multiple stations
-- Favorite toggle (star)
+- Favorite toggle for one or multiple stations
 - Auto-save on reorder and on Save/Delete/Duplicate
 - Copies live_streams.sii from ATS -> ETS2 and vise vera.
 - Creates backups in `live_streams_backup` next to the `.sii`
