@@ -15,7 +15,7 @@ for American Truck Simulator and Euro Truck Simulator 2 — without manually edi
 - Delete one or multiple stations
 - Favorite toggle for one or multiple stations
 - Auto-save on reorder and on Save/Delete/Duplicate
-- Copies live_streams.sii from ATS -> ETS2 and vise vera.
+- Copies & junctions live_streams.sii from ATS -> ETS2 and vise vera.
 - Creates backups in `live_streams_backup` next to the `.sii`
 
 ## Backups
