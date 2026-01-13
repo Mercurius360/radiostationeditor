@@ -1,8 +1,8 @@
 # ATS/ETS2 Radio Station Editor (Windows)
 
-<img width="1202" height="764" alt="Image" src="https://github.com/user-attachments/assets/dfe441a7-5bc5-45df-887c-24d464ec7de2" />
+![Image](https://github.com/user-attachments/assets/d4cd97e9-484e-4fb3-b87d-a497bd6e2196)
 
-<img width="1596" height="764" alt="Image" src="https://github.com/user-attachments/assets/c10f7c47-5dc7-43e2-95c1-5947c584485d" />
+![Image](https://github.com/user-attachments/assets/260a52a6-4a82-439d-8362-e4dc5a1045df)
 
 A simple Windows tool to import, edit, sort, reorder (drag & drop), and delete radio stations in `live_streams.sii`
 for American Truck Simulator and Euro Truck Simulator 2 — without manually editing the `.sii` file.
